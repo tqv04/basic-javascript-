@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thực hành với biến</title>
+</head>
+<body>
+    <h3 id="h3">Bài thực hành với biến trong JavaScript</h3>
+    <p id="p-demo-paragraph">Đoạn văn</p>
+</body>
+
+<script>
+    // Viết code Javascript thực hiện bài tập ở đây
+    var chuoi = "Đây là cửa hàng Pizza365.";
+    console.log(chuoi);
+    var so = 5; 
+    var binhphuong = so ** 2;
+    console.log(binhphuong);
+    var chuuoiRong = "";
+    chuuoiRong = "Xin chào quý khách." + chuoi;
+    console.log(chuuoiRong);
+    var sai = false;
+    sai = ( so < 100);
+    console.log(sai);
+    var tim = document.getElementById("p-demo-paragraph");
+   tim.innerHTML="Hãy mở cửa sổ Console để xem kết quả!";
+    console.log(tim);
+    var bien =18;
+    if( bien < 0 ){
+        console.log("Số phải lớn hơn hoặc bằng 0");
+        
+    }else{
+        console.log("Số hợp lệ");
+        
+    }
+    var h= document.getElementById("h3");
+    console.log(h.innerHTML);
+    var bienso = chuoi.length;
+    console.log(bienso);
+    var kiemTra = chuuoiRong.startsWith("Xin chào");
+    console.log(kiemTra);
+    
+</script>
+</html>

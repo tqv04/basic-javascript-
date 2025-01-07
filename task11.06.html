@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var so = 5;
+    so = typeof so === "string";
+    console.log(so);
+    
+    var chuoi = "Hello Devcamp" , n = 7;
+    chuoi =  chuoi.slice(0,n);
+    console.log(chuoi);
+    
+    var thuong = "js string exercises";
+    var ketQua  = thuong.split(" ").map(  (item) => {
+      return item.charAt(0).toUpperCase() + item.slice(1).toLowerCase();
+    })
+    .join(" ");
+    console.log(ketQua);
+    var chu = 'dcresource ';
+    chu = chu.trim();
+    console.log(chu);
+    var dao = 'AaBbc';
+    dao = dao.split("").reverse().join("");
+    console.log(dao);
+    var kytu= 'DCresource: JavaScript Exercises'   ,         n='e';
+    kytu = kytu.split(n).length -1;
+    console.log(kytu);
+    var chuoiCha = "the quick brown fox jumps over the lazy dog" ;
+    var chuoiCon = "the";
+    chuoiCha = chuoiCha.split(chuoiCon).length -1;
+    console.log(chuoiCha);
+    
+  </script>
+</body>
+</html>
