@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     var arr = [10  , 3 ,  5  , 9   ,30  , 8  , 100  , 45];
+     var arrString= ['Nha Trang','Hà Nội','Vũng Tàu','Cần Thơ','Quảng Ninh','Bắc Giang']
+    console.log(arr[0],arr[3],arr[6]);
+    console.log(arrString[1],arrString[2], arrString[5]);
+      for( let i = 0; i < arr.length ; i++){
+        arr[i] += 10;
+      }
+      console.log(arr);
+      for (let index = 0; index < arrString.length; index++) {
+        arrString[index] = "xin chào" + " " + arrString[index];
+        
+      }
+      arrString.push("Phú Yên")
+      console.log(arrString);
+      console.log(arrString.indexOf('xin chào Hà Nội'));
+      
+  </script>
+</body>
+</html>

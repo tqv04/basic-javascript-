@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1
+      var a= [1, 2, 3, 4, 5, 6], n=3;
+        function TIM(a,n) {
+          return a[n];
+        }
+        console.log( TIM([1, 2, 3, 4, 5, 6],3));
+        console.log(TIM([3, 4, 5, 6, 7, 8],8));
+        
+        // 2
+        var arr =[3, 8, 7, 6, 5, -4, -3, 2, 1];
+        arr.sort((a,b) => a-b);
+        console.log(arr);
+        
+
+        // 3
+        var arr1 =[10, 7, 3];
+        var arr2=[4, 8, 6];
+        var noi = arr1.concat(arr2);
+        console.log(noi);
+          
+
+        // 4
+        var mang= [NaN, 0, 15, false, -22, '',undefined, 47, null];
+        var r= [];
+        for( var i =0; i< mang.length; i++){
+          if(typeof mang[i] === 'number' && !isNaN(mang[i])){
+            r.push(mang[i]);
+          }
+        }
+        console.log("mangmoi: ", r);
+        
+        // 5
+        var m= [2, 5, 9, 6], n=5;
+        var q = m.filter(item => item !== 5);
+        console.log("mmoi:",q);
+        
+        // 6
+        var chan = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var mangmoi= [];
+        chan.forEach(a => {
+          if(chan[a] % 2 ==0){
+            mangmoi.push(chan[a]);
+            
+          }
+        })
+        console.log("sochan:", mangmoi);
+        
+  </script>
+
+</body>
+</html>

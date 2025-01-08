@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Word starts with ap</title>
+</head>
+<body>
+    <h3>Tìm số phần tử bắt đầu bằng ap trong mảng</h3>
+</body>
+
+<script>
+    // Viết tiếp code Javascript xuống dưới đây
+    var openArray = ["apple" , "mango", "banana", "ape", "application", "lime", "soap" , "orange", "open"];
+    var count = 0 ;
+    console.log(count);
+    for (let index = 0; index < openArray.length; index++) {
+        console.log(openArray[index]);
+        
+        const b = openArray[index].startsWith("ap");
+            console.log(b);
+            if(b == true){
+        count = count +1    
+        console.log("ap:",count);
+    }else{
+        console.log("ap: none");
+        
+    }
+    }
+ 
+</script>
+</html>
