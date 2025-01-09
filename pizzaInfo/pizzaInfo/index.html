@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Infor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@300&display=swap"
+        rel="stylesheet">
+    <script>
+        // Đối tượng pizza chứa các thông tin
+        var pizzaObj = {
+            coverImg: "images/Pizza.png",
+            pizzaname: "Perreroni Pizza",
+            pizzaDescription: "Premium pepperoni and cheese is made with real mozzarella on original hand-tossed crust.",
+            inforDetail: {
+                calo: "265 Cal",
+                size: "P/F/C: 12/10/31",
+                tempCel: "53.8 °C",
+            },
+            price: {
+                originalPrice: 29.90,
+                discountPrice: 23.90
+            }
+        };
+        window.onload = function(){
+            var vCoverImg = pizzaObj.coverImg;
+            var vDivTopInfo = document.getElementById("topInfo");
+            vDivTopInfo.src = vCoverImg;
+            
+            document.getElementById("pizzaName").innerText = pizzaObj.pizzaname;
+            document.getElementById("pizzaDescription").innerText  = pizzaObj.pizzaDescription;
+            document.getElementById("detailCalo").innerText = pizzaObj.inforDetail.calo;
+            document.getElementById("detailSize").innerText = pizzaObj.inforDetail.size;
+            document.getElementById("detailTemp").innerText = pizzaObj.inforDetail.tempCel;
+            document.getElementById("dícountPrice").innerText = pizzaObj.price.originalPrice;
+            document.getElementById("originalPrice").innerText = pizzaObj.price.discountPrice;
+        }
+      
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="top__info" >
+                <img src="images/Info.png" id="topInfo"alt="">
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom__header">
+                <div class="header-left" id="pizzaName">pizza-name ở đây</div>
+                <div class="header-right">
+                    <img class="icon" src="images/Hot.png" alt="">
+                    <img class="icon" src="images/Wheat.png" alt="">
+                </div>
+            </div>
+            <div class="bottom__des" id="pizzaDescription">
+                mô tả ở đây (pizza-description)
+            </div>
+            <div class="bottom__detail">
+                <div class="calo" id="detailCalo">detail-calo</div>
+                <div class="size"  id="detailSize">detail-size</div>
+                <div class="temp-cel"  id="detailTemp">detail-temp</div>
+            </div>
+            <div class="bottom__footer">
+                <div class="price">
+                    <div class="discount-price" id="dícountPrice">discount-price</div>
+                    <div class="original-price" id="originalPrice">original-price</div>
+                </div>
+                <div class="footer__button"> ORDER </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

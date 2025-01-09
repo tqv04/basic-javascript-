@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Gửi Lời Chào</title>
+    <style>
+        /* Thiết lập chung cho trang */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container cho form */
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Tiêu đề */
+        .form-container h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Nhãn cho các trường nhập */
+        .form-container label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        /* Các ô input */
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        /* Nút gửi */
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* Chân trang với logo */
+        .logo-container {
+            margin-top: 20px;
+        }
+
+        .logo-container img {
+            width: 30px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>WELCOME TO THE WORLD OF DEVELOPER</h2>
+        <form onsubmit="event.preventDefault(); guiLoiChao();">
+            <label for="hoDem">Họ và đệm:</label>
+            <input type="text" id="hoDem" placeholder="Họ và đệm" required><br>
+
+            <label for="ten">Tên:</label>
+            <input type="text" id="ten" placeholder="Tên" required><br>
+
+            <label for="loiNhan">Lời nhắn:</label>
+            <textarea id="loiNhan" placeholder="Lời nhắn" required></textarea><br>
+
+            <button type="submit">Gửi lời chào</button>
+        </form>
+
+        <div class="logo-container">
+            <img src="images/images/airbnb.png" alt="Google">
+            <img src="images/images/amazon.png" alt="Netflix">
+            <img src="images/images/facebook.png" alt="Amazon">
+            <img src="images/images/google.png" alt="Facebook">
+            <img src="images/images/netflix.png" alt="Grab">
+        </div>
+    </div>
+
+    <script>
+        function guiLoiChao() {
+            const hoDem = document.getElementById("hoDem").value.trim();
+            const ten = document.getElementById("ten").value.trim();
+            const loiNhan = document.getElementById("loiNhan").value.trim();
+
+            if (!hoDem || !ten || !loiNhan) {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+
+            const cauChao = `${loiNhan} ${hoDem} ${ten}`;
+            alert(cauChao);
+        }
+    </script>
+</body>
+</html>
