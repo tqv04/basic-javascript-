@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message To Me - A Future Developer</title>
+  <style>
+    /* Reset some default margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center everything in the page */
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Container to hold image and form */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+}
+
+/* Main image style */
+.main-image {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Message form styling */
+.message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 35%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header and paragraph styling */
+.message-form h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e75b6;
+}
+
+.message-form p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Input field styling */
+.input-message {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input-message:focus {
+  border-color: #2e75b6;
+  box-shadow: 0 0 5px rgba(46, 117, 182, 0.5);
+}
+
+/* Button styling */
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #2e75b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #255a7b;
+}
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-image {
+    width: 80%;  /* Make image smaller on tablets and below */
+    margin-bottom: 20px;
+  }
+
+  .message-form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 20px;
+  }
+
+  .main-image {
+    width: 100%;  /* Full width on smaller screens */
+  }
+
+  .message-form {
+    width: 100%;
+  }
+
+  .submit-button {
+    font-size: 16px;
+  }
+
+  .input-message {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .main-image {
+    width: 100%;
+  }
+
+  .message-form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .input-message {
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="images/programing.png" alt="Programming Image" class="main-image">
+    
+    <div class="message-form">
+      <h1>Message To Me - A Future Developer</h1>
+      <p id="p">lời nhắn gửi đến bạn</p>
+      <input type="text" placeholder="Nhập thông tin gì đó" class="input-message" id="a" value="">
+      <button class="submit-button" onclick="submitClick()">Gửi lời nhắn</button>
+    </div>
+  </div>
+  <script>
+
+    function submitClick() {
+      console.log("đã nhấn");
+      var inputValue = document.getElementById("a").value.trim();
+      if(inputValue === ""){
+        alert("vui long nhap")
+        
+      }else{
+        var div = document.querySelector(".message-form");
+        var p = document.createElement("p");
+        p.innerText= inputValue;
+        p.style.color= "blue";
+        div.appendChild(p);
+        var img  = document.createElement("img");
+        img.src = "images/like-yellow-icon.png";
+        div.appendChild(img);
+      }
+      
+      
+    }
+  </script>
+</body>
+
+</html>

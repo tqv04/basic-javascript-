@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment Value</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <script>
+        "use strict";
+        /*** REGION 1 - Global variables - Vùng khai báo biến, hằng số, tham số TOÀN CỤC */
+
+        /*** REGION 2 - Vùng gán / gọi hàm xử lý sự kiện cho các elements */
+
+        /*** REGION 3 - Event handlers - Vùng khai báo các hàm xử lý sự kiện */
+        //Hàm xử lý sự kiện click nút tăng giá trị input lên 1
+        function onIncrementValueClick() {
+            var vNumberEle = document.getElementById('inp-number');
+            var vValueToIncrement = parseInt(vNumberEle.value, 10);
+            vValueToIncrement = isNaN(vValueToIncrement) ? 0 : vValueToIncrement;
+            const vINCREMENT_UNIT = 1;
+            var newvalue = vValueToIncrement + vINCREMENT_UNIT;
+            vNumberEle.value = newvalue;
+        }
+
+        /*** REGION 4 - Common funtions - Vùng khai báo hàm dùng chung trong toàn bộ chương trình*/
+
+    </script>
+</head>
+
+<body>
+    <div class="container jumbotron">
+        <p> Đây là form thử code; Nút Increment Value sẽ nâng giá trị trong ô input 01 đơn vị</p>
+        <input class="form-control w-25 m-md-2" type="number" id="inp-number" value="0" />
+        <button class="btn btn-success m-md-2" onclick="onIncrementValueClick()"> Increment Value</button>
+    </div>
+</body>
+
+</html>

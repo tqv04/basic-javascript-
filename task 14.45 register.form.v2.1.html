@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+    h2 {
+      text-align: center;
+    }
+    .button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: left;
+      margin: 2px;
+
+    }
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin: 0 1rem;
+    }
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .col-25,
+      .col-75 {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+
+<body onload="onPageLoading()">
+  <h2>Register Form </h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" name="firstname" id="fName" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" name="lastname" id="lName" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select name="country" id="select-country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="col-75">
+        <textarea id="text" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <button class="button" id="btn" onclick="onButtonClick()"> Send data </button>
+    </div>
+  </div>
+</body>
+<script>
+  //khi load trang xong se hienj id và placeholder
+function onPageLoading(){
+  "use strict"
+  var vInputFirstName = document.getElementById("fName");
+        console.log(`Id = ${vInputFirstName.id}`);
+        console.log(`Place holder = ${vInputFirstName.placeholder}`);
+
+  var vInputLastName = document.getElementById("lName");
+        console.log(`Id = ${vInputLastName.id}`);
+        console.log(`Place holder = ${vInputLastName.placeholder}`);
+
+  var vSelectCountry = document.getElementById("select-country");
+        console.log(`Id = ${vSelectCountry.id}`);
+
+  var vInputText = document.getElementById("text");
+        console.log(`Id = ${vInputText.id}`);
+        console.log(`Place holder = ${vInputText.placeholder}`);       
+}
+
+//sử lý khi nhấn nút button
+function onButtonClick(){
+  "use strict"
+  console.log("Nút Send data vừa được ấn")
+  var vObject = {
+    firstName : "",
+    lastName : "", 
+    country : "",
+    subject : ""
+  }
+  getDataToForm(vObject);
+  console.log(vObject);
+}
+
+//hàm để thu thập dữ liệu
+function getDataToForm(paramObject){
+  "use strict"
+  var vObjectFirstName = document.getElementById("fName");
+  var vValueObjectFirstName = vObjectFirstName.value;
+  paramObject.firstName  = vValueObjectFirstName;
+
+  var vObjectLastName = document.getElementById("lName");
+  var vValueObjectLastName = vObjectLastName.value;
+  paramObject.lastName  = vValueObjectLastName;
+
+  var vObjectCountry = document.getElementById("select-country");
+  var vValueObjectCountry = vObjectCountry.value;
+  paramObject.country  = vValueObjectCountry;
+
+  var vObjectText = document.getElementById("text");
+  var vValueObjectText = vObjectText.value;
+  paramObject.subject  = vValueObjectText;
+}
+</script>
+</html>

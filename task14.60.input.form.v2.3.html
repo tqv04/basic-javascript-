@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container jumbotron p-5 mt-4">
+    <div class="text-center mb-5">
+      <h2>Responsive Register Form</h2>
+    </div>
+    
+    <div class="row form-group">
+      <label class="col-sm-2 col-form-label" for="inp-fname">First Name</label>
+      <div class="col-sm-4">
+        <input type="text" id="inp-fname" name="firstname" value="" placeholder="Your name.." class="form-control">
+      </div>
+      
+      <label class="col-sm-2 col-form-label" for="inp-lname">Last Name</label>
+      <div class="col-sm-4">
+        <input type="text" id="inp-lname" value="" name="lastname" placeholder="Your last name.." class="form-control">
+      </div>
+    </div>
+
+    <!-- Thêm trường Gender và Age -->
+    <div class="row form-group">
+      <label class="col-sm-2 col-form-label" for="inp-gender">Gender</label>
+      <div class="col-sm-4">
+        <select id="inp-gender" name="gender" class="form-control">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      
+      <label class="col-sm-2 col-form-label" for="inp-age">Age</label>
+      <div class="col-sm-4">
+        <input type="number" id="inp-age" value="" name="age" placeholder="Your age.." class="form-control">
+      </div>
+    </div>
+
+    <!-- Thêm trường Purpose và Address -->
+    <div class="row form-group">
+      <label class="col-sm-2 col-form-label" for="inp-purpose">Purpose</label>
+      <div class="col-sm-4">
+        <select id="inp-purpose" name="purpose" class="form-control">
+          <option value="business">Business</option>
+          <option value="private">Private</option>
+          <option value="tourist">Tourist</option>
+          <option value="medical">Medical</option>
+        </select>
+      </div>
+      
+      <label class="col-sm-2 col-form-label" for="inp-address">Address</label>
+      <div class="col-sm-4">
+        <input type="text" id="inp-address" name="address" value="" placeholder="Your address.." class="form-control">
+      </div>
+    </div>
+
+    <!-- Các trường còn lại -->
+    <div class="row form-group">
+      <label class="col-sm-2 col-form-label">Country</label>
+      <div class="col-sm-4">
+        <select id="select-country" name="country" class="form-control">
+          <option value="01-au">Australia</option>
+          <option value="02-ca">Canada</option>
+          <option value="03-us">USA</option>
+          <option value="04-cn">China</option>
+        </select>
+      </div>
+      <label class="col-sm-2 col-form-label">Region</label>
+      <div class="col-sm-4">
+        <input type="text" value="" id="inp-region" name="regioninput" placeholder="Your region.." class="form-control">
+      </div>
+    </div>
+    
+    <div class="row form-group text-right">
+      <div class="col-sm-12">
+        <button class="btn btn-info px-4" id="btn-send" onclick="sendClick()">Send</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  "use strict";
+
+  /*** REGION 1 - Global variables - Vùng khai báo biến, hằng số, tham số TOÀN CỤC */
+  function sendClick() {
+    console.log("Đã click");
+
+    // Thu thập dữ liệu từ form và lưu vào một Object
+    var formData = {
+      firstName: document.getElementById("inp-fname").value.trim(),
+      lastName: document.getElementById("inp-lname").value.trim(),
+      gender: document.getElementById("inp-gender").value,
+      age: document.getElementById("inp-age").value,
+      purpose: document.getElementById("inp-purpose").value,
+      address: document.getElementById("inp-address").value.trim(),
+      country: document.getElementById("select-country").value,
+      region: document.getElementById("inp-region").value.trim()
+    };
+
+    // Ghi đối tượng formData ra console
+    console.log("Form Data: ", formData);
+  }
+
+  /*** REGION 2 - Vùng gán / thực thi hàm xử lý sự kiện cho các elements */
+
+  /*** REGION 3 - Event handlers - Vùng khai báo các hàm xử lý sự kiện */
+
+  /*** REGION 4 - Common functions - Vùng khai báo hàm dùng chung trong toàn bộ chương trình */
+</script>
+
+
+</html>

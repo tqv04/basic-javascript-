@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Giải phương trình bậc hai</title>
+</head>
+
+<body>
+  <div class="container jumbotron p-5 mt-4">
+    <div class="text-center mb-5">
+      <h2>Giải phương trình bậc hai</h2>
+    </div>
+    <p>Phương trình bậc 2 có 3 tham số a, b và c</p>
+    
+    <div class="form-group">
+      <label for="inp-a">Số a</label>
+      <input type="number" id="inp-a" class="form-control" placeholder="Nhập số a">
+    </div>
+
+    <div class="form-group">
+      <label for="inp-b">Số b</label>
+      <input type="number" id="inp-b" class="form-control" placeholder="Nhập số b">
+    </div>
+
+    <div class="form-group">
+      <label for="inp-c">Số c</label>
+      <input type="number" id="inp-c" class="form-control" placeholder="Nhập số c">
+    </div>
+
+    <div class="text-center" id="aba"  >
+      <button class="btn btn-info" id="btn-calculate" onclick="solveEquation()">Tìm nghiệm</button>
+    </div>
+  </div>
+
+  <script>
+    function solveEquation() {
+      var a = parseFloat(document.getElementById("inp-a").value);
+      var b = parseFloat(document.getElementById("inp-b").value);
+      var c = parseFloat(document.getElementById("inp-c").value);
+
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Vui lòng nhập đủ các số a, b, c!");
+        return;
+      }
+
+      var delta = b * b - 4 * a * c;
+      if (delta < 0) {
+        var div = document.querySelector("#aba");
+        var a = document.createElement("p");
+        a.innerText= "phương trình vô nghiệm";
+        a.style.color="red";
+        div.appendChild(a);
+      } else if (delta === 0) {
+        var x = -b / (2 * a);
+        var div = document.querySelector("#aba");
+        var a = document.createElement("p");
+        a.innerText= "phương trình có 1 nghiệm kép: x=" + x;
+        a.style.color="blue";
+        div.appendChild(a);
+      } else {
+        
+        var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+        var div = document.querySelector("#aba");
+        var a = document.createElement("p");
+        a.innerHTML = "Phương trình có 2 nghiệm: <br> x1 = " + x1 + "<br> x2 = " + x2;
+        a.style.color="green";
+        div.appendChild(a);
+      }
+    }
+  </script>
+</body>
+
+</html>
