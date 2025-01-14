@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head> 
+
+<body>
+  <div class="container jumbotron"> 
+    <div class="form-group">
+      <label for="inputmsg">Input text</label>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control w-50" id="input-message" name="inputmsg" placeholder="...">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" onclick="onBtnWriteMessageDClick()">D: Viết thông điệp xuống dưới với throw and debugger</button>
+    </div> 
+    <div>
+      <!-- Ensure only one ID here for consistency -->
+      <p id="log-result" style="color:green">...message come here...</p>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  /*** REGION 1 - Global variables - Vùng khai báo biến, hằng số, tham số TOÀN CỤC */
+  var messageDisplay = document.getElementById("log-result"); // Corrected: use getElementById for a single element
+  var inputMessage = document.getElementById("input-message"); // Corrected: use getElementById for a single element
+
+  /*** REGION 2 - Vùng gán / thực thi sự kiện cho các elements */
+  // These are initialized above, so this section can be removed or used for logging later if needed
+
+  /*** REGION 3 - Event handlers - Vùng khai báo các hàm xử lý sự kiện */
+  function onBtnWriteMessageDClick() {
+    "use strict";
+    
+    // Trace the function call
+    console.log("Button clicked, function onBtnWriteMessageDClick called");
+
+    // Using `debugger;` to pause execution if needed
+    debugger;
+
+    // Set the inner text of the message display
+    messageDisplay.innerText = inputMessage.value;
+  }
+
+  /*** REGION 4 - Common functions - Vùng khai báo hàm dùng chung trong toàn bộ chương trình */
+</script>
+</html>

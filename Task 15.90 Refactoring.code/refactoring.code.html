@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="styles/style.css" rel="stylesheet" type="text/css">
+  <title>Sửa code theo coding convention</title>
+</head>
+
+<body onload="initializePage()">
+
+  <h2>Responsive Form - Form mẫu</h2>
+  <p>Hãy refactoring để code đạt chuẩn Coding Convention</p>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-25">
+        <label for="first-name">First Name</label>
+      </div>
+      <div class="col-75">
+        <input id="first-name" type="text" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="last-name">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input id="last-name" type="text" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <button id="btn-send-data" onclick="submitForm()" class="button">Send data</button>
+    </div>
+  </div>
+
+  <script>
+    // Vùng 1: Định nghĩa các biến toàn cục
+    const firstNameInput = document.getElementById('first-name');
+    const lastNameInput = document.getElementById('last-name');
+    const countrySelect = document.getElementById('country');
+    const subjectTextarea = document.getElementById('subject');
+
+    // Vùng 2: Các hàm xử lý sự kiện
+    // Hàm xử lý sự kiện khi trang được tải (onload)
+    function initializePage() {
+      console.log('SubTask 1: load page - Khi load ghi id và placeholder của tất cả input ra console');
+      console.log(`First Name ID: ${firstNameInput.id} ; Placeholder: ${firstNameInput.placeholder}`);
+      console.log(`Last Name ID: ${lastNameInput.id} ; Placeholder: ${lastNameInput.placeholder}`);
+      console.log(`Country ID: ${countrySelect.id} ; Value: ${countrySelect.value}`);
+      console.log(`Subject ID: ${subjectTextarea.id} ; Placeholder: ${subjectTextarea.placeholder}`);
+    }
+
+    // Hàm xử lý sự kiện khi nút "Send data" được ấn
+    function submitForm() {
+      console.log('Nút send data vừa được ấn');
+      console.log('SubTask 3: Khi ấn nút, ghi tất cả value đọc được từ các input ra console');
+      console.log(`First Name: ${firstNameInput.value}`);
+      console.log(`Last Name: ${lastNameInput.value}`);
+      console.log(`Country: ${countrySelect.value}`);
+      console.log(`Subject: ${subjectTextarea.value}`);
+    }
+  </script>
+</body>
+</html>

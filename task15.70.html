@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Doi mau tieu de theo nut tuong ung</h1>
+  <p>Hello devcamp 120. Chuc ban thanh cong tren con duong Developer!</p>
+  <div>
+      <button style="background-color: red; color: white; border: none; padding: 10px;" id="red">To red</button>
+      <button style="background-color: blue; color: white;  border: none;  padding: 10px;" id="blue">To blue</button>
+      <button style="background-color: green; color: white;  border: none;  padding: 10px;"  id="green">To Green</button>
+  </div>
+  <script>
+    document.getElementById("red").addEventListener('click', function() {
+      console.log(document.getElementById("red"));
+      var changeHello = document.getElementsByTagName("p")[0];
+      changeHello.style.color= "red";
+    })
+    document.getElementById("blue").addEventListener('click', function() {
+        var changeHello = document.getElementsByTagName("p")[0];
+        changeHello.style.color = "blue";
+    });
+
+    document.getElementById("green").addEventListener('click', function() {
+        var changeHello = document.getElementsByTagName("p")[0];
+        changeHello.style.color = "green";
+    });
+  </script>
+</body>
+</html>
