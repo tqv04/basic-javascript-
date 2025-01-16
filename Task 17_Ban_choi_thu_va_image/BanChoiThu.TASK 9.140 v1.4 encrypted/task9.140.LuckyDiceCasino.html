@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lucky Dice Casino</title>
+    <style>
+        #img{
+            width: 200px;
+            height: 200px;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        button{
+            width: 200px;
+            height: 50px;
+        }
+        h2{
+            display: none;
+        }
+    </style>
+</head>
+<img src="images/people-playing-casino.jpg" alt="" width="500px" height="500px">
+<p>Chao mung den voi Lucky Dice casino</p>
+<img src="images/dice.png" alt="" id="img">
+<button id="Nem">Nem</button>
+<h2 id="h2"></h2>
+<script> 
+      var diceImage = document.getElementById('img');
+        document.getElementById("Nem").addEventListener('click', function () {
+
+            var randomNumber = Math.floor(Math.random() * 6) + 1;
+
+
+            diceImage.src = "images/" + randomNumber + ".png";
+
+
+            var messageElement = document.querySelector('h2');
+            messageElement.style.display = "block";
+
+            if (randomNumber < 4) {
+
+                messageElement.style.color = "purple";
+                messageElement.innerText = "Cảm ơn bạn. Hãy cố gắng lần sau!";
+                console.log("Cảm ơn bạn. Hãy cố gắng lần sau!");
+            } else {
+
+                messageElement.style.color = "orange";
+                messageElement.innerText = "Chúc mừng bạn. Hãy chơi ván nữa!";
+                console.log("Số mặt từ 4 đến 6, câu chúc mừng: Chúc mừng bạn. Hãy chơi ván nữa!");
+            }
+
+            console.log("Bạn đã ném được số: " + randomNumber);
+        });
+
+</script>
+</html>
